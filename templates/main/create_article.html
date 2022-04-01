@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center">Create Article</h1>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form method="post" enctype="multipart/form-data" class="container mb-5" action="{% url 'create article' %}">
+                {% csrf_token %}
+                {{ form }}
+                <button class="btn btn-primary mt-2" type="submit">Create</button>
+            </form>
+            <a href="{% url 'create category' %}" class="btn btn-info">Add category</a>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+{% endblock %}

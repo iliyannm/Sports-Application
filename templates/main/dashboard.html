@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1 class='text-center'>
+            {% if articles %}
+                All articles
+            {% else %}
+                No articles yet
+            {% endif %}
+        </h1>
+{% if articles %}
+    <div class="container mb-5">
+        <div class="row mb-5">
+            {% for article in articles %}
+            <div class="card ml-3 mb-3" style="width: 18rem;">
+                <img src="{{ article.photo.url }}"
+                     class="card-img-top" alt="Photo description">
+                <div class="card-body">
+                <h5 class="card-title">{{ article.title }}</h5>
+                    <p class="card-text">{{ article.description|truncatechars:50 }}</p>
+                        <h5 class="card-title">{% if article.publication_date %}</h5>
+                            {{ article.publication_date }}
+                        {% endif %}
+                        <a class="nav-link" href="{% url 'article details' article.pk %}">Read full article</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <div class=" row d-flex justify-content-center align-content-center">
+    </div>
+{% endif %}
+{% endblock %}
