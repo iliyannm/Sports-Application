@@ -67,6 +67,8 @@ class Profile(models.Model):
     picture = models.ImageField(
         null=True,
         blank=True,
+        upload_to='profile_pics',
+        default='profile_pics/default'
     )
 
     email = models.EmailField(

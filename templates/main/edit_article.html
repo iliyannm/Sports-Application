@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% if is_owner or has_perm %}
+    {% if has_perm  or is_owner or is_superuser %}
     <h1 class="text-center">Edit Your Article Info</h1>
     <div class="row">
         <div class="col-lg-3"></div>

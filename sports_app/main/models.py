@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
+from sports_app.common.validators import validate_letters_numbers_and_spaces_only
+
 UserModel = get_user_model()
 
 
@@ -10,6 +12,9 @@ class ArticleSportCategory(models.Model):
     category = models.CharField(
         max_length=CATEGORY_MAX_LENGTH,
         unique=True,
+        validators=(
+            validate_letters_numbers_and_spaces_only,
+        )
     )
 
     def __str__(self):

@@ -44,7 +44,7 @@
         {% else %}
             <a class="btn btn-outline-info" href="{% url 'login' %}?next={{request.path}}">Log in to add a comment!</a><br>
         {% endif %}
-        {% if is_owner or has_perm %}
+        {% if has_perm  or is_owner or is_superuser %}
             <a href="{% url 'edit article' article.pk %}" class="btn btn-primary">Edit</a>
             <a href="{% url 'delete article' article.pk %}" class="btn btn-danger">Delete</a>
         {% endif %}

@@ -57,12 +57,6 @@ class EditProfileForm(BootstrapFormMixin, forms.ModelForm):
                 }
             ),
 
-            # 'picture': forms.ImageField(
-            #     # attrs={
-            #     #     'placeholder': 'Upload photo',
-            #     # }
-            # ),
-
             'email': forms.EmailInput(
                 attrs={
                     'placeholder': 'Enter email',

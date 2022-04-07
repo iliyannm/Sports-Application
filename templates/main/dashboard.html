@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
         <h1 class='text-center'>
             {% if articles %}
                 All articles
@@ -11,7 +12,7 @@
     <div class="container mb-5">
         <div class="row mb-5">
             {% for article in articles %}
-            <div class="card ml-3 mb-3" style="width: 18rem;">
+            <div class="card ml-3 mb-3" style="width: 30rem;">
                 <img src="{{ article.photo.url }}"
                      class="card-img-top" alt="Photo description">
                 <div class="card-body">
