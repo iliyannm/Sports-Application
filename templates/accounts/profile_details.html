@@ -8,9 +8,15 @@
                 <img src="{{ profile.picture.url }}"
                      class="w-50 rounded mx-auto d-block" alt="{{ profile.full_name }}">
             </div>
+    {% else %}
+        <div>
+            <img src="https://hope.be/wp-content/uploads/2015/05/no-user-image.gif"
+                 alt="Profile Image">
+        </div>
     {% endif %}
             <div class="d-inline p-2 w-50">
                 <div class="d-flex flex-column">
+                <div class="col-lg-6">
                     <h5><u>Name:</u> {{ profile.full_name }}</h5>
                     {% if profile.date_of_birth %}
                         <h5><u>Birthdate:</u> {{ profile.date_of_birth }}</h5>
@@ -27,6 +33,7 @@
                     {% else %}
                         <h5><u>Gender:</u> Not added yet</h5>
                     {% endif %}
+                </div>
                 </div>
                 {% if is_owner or is_superuser %}
                     <a href="{% url 'edit profile' profile.pk %}" class="btn btn-primary">Edit</a>
@@ -46,7 +53,9 @@
 {#            <div class="card ml-3 mb-3" style="width: 18rem;">#}
 {#            <div class="container mb-5">#}
         <div class="row mb-5">
-            {{ article.title|truncatechars:20 }}
+        <div class="col-lg-6">
+            {{ article.title }}
+        </div>
         <div class="card ml-3 mb-3" style="width: 18rem;">
                 <!-- Image -->
                 <img src="{{ article.photo.url }}"
