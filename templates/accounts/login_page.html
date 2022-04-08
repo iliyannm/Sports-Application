@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+    <div class="col-lg-6">
+            <section id="registerPage">
     <h1>You are not logged in, log in here if you already have registration.</h1>
     <form method="POST">
         {% csrf_token %}
@@ -8,4 +11,6 @@
     </form>
     <h2>If you do not have registration, register here</h2>
     <a href="{% url 'create profile' %}" class="btn btn-warning">Register</a>
+                </section>
+        </div>
 {% endblock %}

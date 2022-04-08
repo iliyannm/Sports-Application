@@ -1,41 +1,47 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, Permission
 from django.core.management.base import BaseCommand
 
 from sports_app.accounts.models import Profile
-
-User = get_user_model()
 
 
 class Command(BaseCommand):
     help = 'Creates only staff user (no admin permissions)'
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.UserModel = get_user_model()
+
     def handle(self, *args, **kwargs):
-        user = User(
-            username=input('Username:'),
+        user = self.UserModel(
+            username=input("Username:"),
             is_staff=True,
         )
-
-        user.set_password((input('Password:')))
-
-        my_group = Group.objects.get(name='staff_group')
+        user.set_password(input("Password:"))
 
         user.full_clean()
-
         user.save()
 
-        # my_group.user_set.add(user)
+        staff_group, created = Group.objects.get_or_create(
+            name="staff_group"
+        )
 
-        user.groups.add(my_group)
+        change_article_perm = Permission.objects.filter(codename="change_article").first()
+        delete_article_perm = Permission.objects.filter(codename="delete_article").first()
+        view_article_perm = Permission.objects.filter(codename="view_article").first()
+        staff_group.permissions.add(change_article_perm)
+        staff_group.permissions.add(delete_article_perm)
+        staff_group.permissions.add(view_article_perm)
 
-        user.save()
+        staff_group.user_set.add(user)
 
         profile = Profile(
             first_name=input('First name:'),
             last_name=input('Last name:'),
-            user_id=user.id
+            user=user
         )
 
         profile.full_clean()
-
         profile.save()
+
+        self.stdout.write("Staff user created successfully!")

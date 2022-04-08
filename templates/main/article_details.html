@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="d-flex">
+    <div class="col-lg-6">
         <div class="d-inline p-2 w-50">
             <div>
                 {{ category }}
@@ -44,12 +45,13 @@
         {% else %}
             <a class="btn btn-outline-info" href="{% url 'login' %}?next={{request.path}}">Log in to add a comment!</a><br>
         {% endif %}
-        {% if is_owner or has_perm %}
+        {% if has_perm or is_owner or is_superuser %}
             <a href="{% url 'edit article' article.pk %}" class="btn btn-primary">Edit</a>
             <a href="{% url 'delete article' article.pk %}" class="btn btn-danger">Delete</a>
         {% endif %}
     <div>
         The article is added by:
         <a class="nav-link" href="{% url 'profile details' creator.pk %}">{{ creator }}</a>
+    </div>
     </div>
 {% endblock %}
