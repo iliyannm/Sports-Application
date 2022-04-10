@@ -9,10 +9,7 @@ SECRET_KEY = 'django-insecure-^=_f59l^!ow79lmal@1qrl-(jfd6u^s^g2@&!b#(cth)ax-*i4
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '0.0.0.0',
-    'localhost',
-    '127.0.0.1',
-    'https://sportsapplication.herokuapp.com/',
+    '*',
 ]
 
 DJANGO_APPS = (
