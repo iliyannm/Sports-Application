@@ -1,3 +1,4 @@
+import dj_database_url
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,7 +76,10 @@ DATABASES = {
     }
 }
 
-DATABASE_URL= 'postgres://dhmfyrlnrwregy:c549c0215cde4c23f6b3dacae974d3099212a8590547715517b4338ebb0978d7@ec2-3-230-122-20.compute-1.amazonaws.com:5432/d5a8bnc01rhb6f'
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
+# DATABASE_URL= 'postgres://dhmfyrlnrwregy:c549c0215cde4c23f6b3dacae974d3099212a8590547715517b4338ebb0978d7@ec2-3-230-122-20.compute-1.amazonaws.com:5432/d5a8bnc01rhb6f'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
