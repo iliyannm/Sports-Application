@@ -8,6 +8,9 @@ SECRET_KEY = 'django-insecure-^=_f59l^!ow79lmal@1qrl-(jfd6u^s^g2@&!b#(cth)ax-*i4
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'localhost',
+    '127.0.0.1',
     'https://sportsapplication.herokuapp.com/',
 ]
 
@@ -71,6 +74,8 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+DATABASE_URL= 'postgres://dhmfyrlnrwregy:c549c0215cde4c23f6b3dacae974d3099212a8590547715517b4338ebb0978d7@ec2-3-230-122-20.compute-1.amazonaws.com:5432/d5a8bnc01rhb6f'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
