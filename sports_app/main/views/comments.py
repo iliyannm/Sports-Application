@@ -8,11 +8,6 @@ class CreateCommentView(views.CreateView):
     template_name = 'main/article_details.html'
     context_object_name = 'article'
 
-    # def get_success_url(self):
-    #     messages.success(
-    #         self.request, 'Your post has been created successfully.')
-    #     return reverse_lazy("article details")
-
     def form_valid(self, form):
         obj = form.save(commit=False)
         obj.user = self.request.user
