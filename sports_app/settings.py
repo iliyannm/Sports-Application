@@ -7,7 +7,10 @@ SECRET_KEY = 'django-insecure-^=_f59l^!ow79lmal@1qrl-(jfd6u^s^g2@&!b#(cth)ax-*i4
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'https://git.heroku.com/sportsapplication.git',
+]
 
 DJANGO_APPS = (
     'django.contrib.admin',
@@ -130,5 +133,3 @@ LOGGING = {
 }
 
 AUTH_USER_MODEL = 'accounts.SportsAppUser'
-
-# Configure Django App for Heroku.
