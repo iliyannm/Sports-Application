@@ -8,8 +8,7 @@ SECRET_KEY = 'django-insecure-^=_f59l^!ow79lmal@1qrl-(jfd6u^s^g2@&!b#(cth)ax-*i4
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'https://git.heroku.com/sportsapplication.git',
+    'https://sportsapplication.herokuapp.com/',
 ]
 
 DJANGO_APPS = (
