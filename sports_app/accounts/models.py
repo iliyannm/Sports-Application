@@ -1,5 +1,5 @@
 from django.contrib.auth import models as auth_models
-from django.core.validators import MinLengthValidator
+from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
 from sports_app.accounts.managers import SportsAppUserManager
@@ -16,6 +16,7 @@ class SportsAppUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
         validators=(
             validate_letters_numbers_and_dashes_only,
             MinLengthValidator(USERNAME_MIN_LENGTH),
+            MaxLengthValidator(USERNAME_MAX_LENGTH),
         )
     )
 
@@ -49,8 +50,9 @@ class Profile(models.Model):
         blank=False,
         max_length=FIRST_NAME_MAX_LENGTH,
         validators=(
-            MinLengthValidator(FIRST_NAME_MIN_LENGTH),
             validate_only_letters,
+            MinLengthValidator(FIRST_NAME_MIN_LENGTH),
+            MaxLengthValidator(FIRST_NAME_MAX_LENGTH),
         )
     )
 
@@ -59,8 +61,9 @@ class Profile(models.Model):
         blank=False,
         max_length=LAST_NAME_MAX_LENGTH,
         validators=(
-            MinLengthValidator(LAST_NAME_MIN_LENGTH),
             validate_only_letters,
+            MinLengthValidator(LAST_NAME_MIN_LENGTH),
+            MaxLengthValidator(LAST_NAME_MAX_LENGTH),
         )
     )
 
