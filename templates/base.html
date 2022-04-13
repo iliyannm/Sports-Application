@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <title>The Ultimate SportsApp</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="https://pluspng.com/img-png/png-volleyball-glossy-volleyball-png-512.png">
@@ -14,7 +13,6 @@
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
-<!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:3%">
     <img src="{% static 'images/volleyball.png' %}" alt="volleyball">
         <section id="welcomePage">
@@ -48,23 +46,15 @@
         </ul>
     </div>
 </nav>
-<!-- End Navigation Bar -->
-
-<!-- Profile Information -->
 <div class="container">
     {% block content %}
     {% endblock %}
 </div>
-
 {% block bottom_page_content %}
 {% endblock %}
-
-<!-- Page Footer -->
 <footer class="fixed-bottom card-footer ">
     <div>Welcome to the Ultimate SportsApp</div>
 </footer>
-<!-- End Page Footer -->
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

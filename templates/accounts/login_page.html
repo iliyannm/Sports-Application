@@ -1,16 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="col-lg-6">
             <section id="registerPage">
-    <h1>You are not logged in, log in here if you already have registration.</h1>
+    <h1>
+        <p style="color: honeydew">
+            You are not logged in, log in here if you already have registration.
+        </p>
+    </h1>
     <form method="POST">
         {% csrf_token %}
-        {{ form }}
+        <p style="color: honeydew">
+            {{ form }}
+        </p>
         <button class="btn btn-primary mt-2" type="submit">Log in</button>
     </form>
-    <h2>If you do not have registration, register here</h2>
+    <br/>
+    <br/>
+    <br/>
+    <h2>
+        <p style="color: honeydew">
+            If you do not have registration, register here:
+        </p>
+    </h2>
     <a href="{% url 'create profile' %}" class="btn btn-warning">Register</a>
                 </section>
-        </div>
 {% endblock %}

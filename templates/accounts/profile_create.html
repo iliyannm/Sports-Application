@@ -3,17 +3,16 @@
 {% load static %}
     <h1 class="text-center">Create Your Profile</h1>
     <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
             <section id="registerPage">
             <form method="post" action="{% url 'create profile' %}">
                 <fieldset>
                 {% csrf_token %}
-                {{ form }}
+                <p style="color: honeydew">
+                    {{ form }}
+                </p>
                 <button class="btn btn-primary mt-2" type="submit">Create</button>
                     </fieldset>
             </form>
                 </section>
         </div>
-    </div>
 {% endblock %}

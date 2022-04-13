@@ -13,7 +13,7 @@ def validate_letters_numbers_and_dashes_only(value):
 def validate_only_letters(value):
     for ch in value:
         if not ch.isalpha():
-            raise ValidationError('The first name must contain only letters')
+            raise ValidationError('The name must contain only letters')
 
 
 # category validator for the ArticleSportCategory model
