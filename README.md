@@ -1,6 +1,6 @@
 **Project Introduction**
 
-SportsApp is my defense project for Python Web Framework (Django) course (March 2022). The website's purpose is to deliver the latest news for the fans of all sports, like football, boxing, ecc. and gather all supporters in one place.
+The Ultimate Sports Application is my defense project for Python Web Framework (Django) course (March 2022). The website's purpose is to deliver the latest news for the fans of all sports, like football, boxing, ecc. and gather all supporters in one place.
 
 **Ultimate-Sports-Application** - https://sportsapplication.herokuapp.com/
 
