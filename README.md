@@ -7,15 +7,15 @@ The Ultimate Sports Application is my defense project for Python Web Framework (
 **Django project for SoftUni Django course**
 
 Technologies used:
-Django
-PostgreSQL
-Bootstrap
-HTML
-CSS
-Functionality
-Logged users can create, edit and delete their own article, they have full set of permission on their own profiles as well, they can add comments too
-Staff users extend functionality with option to edit and delete all articles
-Admin users have all the permissions on the website
+Django /
+PostgreSQL /
+Bootstrap /
+HTML /
+CSS /
+Functionality /
+Logged users can create, edit and delete their own article, they have full set of permission on their own profiles as well, they can add comments too /
+Staff users extend functionality with option to edit and delete all articles /
+Admin users have all the permissions on the website /
 Tests
 
 ![Screenshot from 2022-05-21 15-51-52](https://user-images.githubusercontent.com/102832367/169653386-a26712d1-118e-449a-b571-9ec9ec2caf60.png)
